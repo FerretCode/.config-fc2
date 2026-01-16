@@ -1,0 +1,28 @@
+{
+    "checksum": "e6b184ec685862ce75305039c70117cf",
+    "wallpaper": "/home/fc/Downloads/wallpapers/0079.jpg",
+    "alpha": "100",
+    "special": {
+        "background": "#140e20",
+        "foreground": "#c4c2c7",
+        "cursor": "#c4c2c7"
+    },
+    "colors": {
+        "color0": "#140e20",
+        "color1": "#E79B71",
+        "color2": "#31578E",
+        "color3": "#5B6895",
+        "color4": "#96728D",
+        "color5": "#758CB1",
+        "color6": "#A092AA",
+        "color7": "#c4c2c7",
+        "color8": "#645d72",
+        "color9": "#E79B71",
+        "color10": "#31578E",
+        "color11": "#5B6895",
+        "color12": "#96728D",
+        "color13": "#758CB1",
+        "color14": "#A092AA",
+        "color15": "#c4c2c7"
+    }
+}
