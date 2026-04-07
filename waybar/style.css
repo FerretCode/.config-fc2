@@ -1,0 +1,161 @@
+/* ── palette ────────────────────────────────────────────────── */
+@define-color bg       #0f0f0f;
+@define-color bg2      #1a1a1a;
+@define-color fg       #e0e0e0;
+@define-color fg-dim   #666666;
+@define-color accent   #c8ff00;   /* sharp lime — change to taste  */
+@define-color warn     #ffaa00;
+@define-color crit     #ff3333;
+@define-color border   #2a2a2a;
+
+/* ── global reset ───────────────────────────────────────────── */
+* {
+    font-family: "Monaco Nerd Font Mono", "IBM Plex Mono", "JetBrains Mono", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── bar ────────────────────────────────────────────────────── */
+window#waybar {
+    background: @bg;
+    color: @fg;
+    border-bottom: 1px solid @border;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background: transparent;
+}
+
+/* ── shared block style ─────────────────────────────────────── */
+.modules-right > widget > * ,
+.modules-left  > widget > * ,
+.modules-center > widget > * {
+    padding: 0 14px;
+    margin: 0;
+    background: transparent;
+    color: @fg;
+    border-right: 1px solid @border;
+}
+
+/* remove trailing divider on rightmost */
+.modules-right > widget:last-child > * {
+    border-right: none;
+}
+
+/* ── workspaces ─────────────────────────────────────────────── */
+#workspaces {
+    padding: 0 6px;
+    border-right: 1px solid @border;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    color: @fg-dim;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    min-width: 0;
+    font-size: 10px;
+    transition: color 100ms, background 100ms;
+}
+
+#workspaces button:hover {
+    background: @bg2;
+    color: @fg;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    color: @accent;
+}
+
+#workspaces button.urgent {
+    color: @crit;
+}
+
+/* ── clock ──────────────────────────────────────────────────── */
+#clock {
+    color: @fg;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    border-left: 1px solid @border;
+    border-right: 1px solid @border;
+}
+
+/* ── cpu ────────────────────────────────────────────────────── */
+#cpu {
+    color: @fg-dim;
+}
+
+#cpu.warning { color: @warn; }
+#cpu.critical { color: @crit; }
+
+/* ── memory ─────────────────────────────────────────────────── */
+#memory {
+    color: @fg-dim;
+}
+
+/* ── battery ────────────────────────────────────────────────── */
+#battery {
+    color: @fg-dim;
+}
+
+#battery.charging {
+    color: @accent;
+}
+
+#battery.warning:not(.charging) {
+    color: @warn;
+}
+
+#battery.critical:not(.charging) {
+    color: @crit;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.4; }
+}
+
+/* ── network ────────────────────────────────────────────────── */
+#network {
+    color: @fg-dim;
+}
+
+#network.disconnected {
+    color: @crit;
+}
+
+/* ── bluetooth ──────────────────────────────────────────────── */
+#bluetooth {
+    color: @fg-dim;
+}
+
+#bluetooth.connected {
+    color: @fg;
+}
+
+#bluetooth.disabled {
+    color: @border;
+}
+
+/* ── tray ───────────────────────────────────────────────────── */
+#tray {
+    border-right: none;
+    padding: 0 10px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}

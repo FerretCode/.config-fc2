@@ -209,6 +209,7 @@ for_window [class=TelegramDesktop] focus
 for_window [class="Yad" instance="yad"] floating enable
 for_window [class="Galculator" instance="galculator"] floating enable
 for_window [class="Blueberry.py" instance="blueberry.py"] floating enable
+for_window [class="^quicksample$"] floating enable
 
 # set floating (nontiling) for special apps
 for_window [class="Xsane" instance="xsane"] floating enable
@@ -242,6 +243,9 @@ exec_always $HOME/.config/i3/scripts/import-gsettings
 exec --no-startup-id xsetroot -cursor_name left_ptr
 
 exec --no-startup-id eval "$(gnome-keyring-daemon --start --components=secrets,ssh)"
+
+exec --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" -0.5
+exec --no-startup-id xinput set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Profile Enabled" 0 1
 
 ## compositor
 
@@ -366,8 +370,8 @@ set $yellowbrown    #e1b700
 
 # define colors for windows:
 #class                  border   bground   text    indicator child_border
-client.focused          #4c7899  #285577   #ffffff #2e9ef4   #4c7899
-client.focused_inactive #333333  #5f676a   #ffffff #484e50   #5f676a
+client.focused          #6e6b6b  #383838   #ffffff #2e9ef4   #6e6b6b
+client.focused_inactive #333333  #4d4b4b   #ffffff #484e50   #5f676a
 client.unfocused        #333333  #222222   #888888 #292d2e   #222222
 client.urgent           #2f343a  #900000   #ffffff #900000   #900000
 client.placeholder      #000000  #0c0c0c   #ffffff #000000   #000000
