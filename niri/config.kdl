@@ -73,8 +73,14 @@ input {
 }
 
 cursor {
-    xcursor-theme "macOS"
-    xcursor-size 84
+    xcursor-theme "MacTahoe-cursors"
+    xcursor-size 48
+}
+
+output "HDMI-A-1" {
+    mode "2560x1440@60"
+    position x=0 y=-1440
+    scale 1.0
 }
 
 // You can configure outputs by their name, which you can find
@@ -96,7 +102,7 @@ output "eDP-1" {
     mode "1920x1080@60"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1
+    scale 1.0
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -203,9 +209,9 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        on
 
-        width 0
+        width 5
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -327,10 +333,10 @@ window-rule {
     default-column-width {}
 }
 
-window-rule {
-    match app-id="kitty"
-    opacity 0.85
-}
+// window-rule {
+//     match app-id="kitty"
+//     opacity 0.85
+// }
 
 window-rule {
     draw-border-with-background false
@@ -482,6 +488,15 @@ binds {
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
 
+    Mod+Ctrl+H { focus-monitor-left; }
+    Mod+Ctrl+L { focus-monitor-right; }
+
+    Mod+Ctrl+K { focus-monitor-up; }
+    Mod+Ctrl+J { focus-monitor-down; }
+
+    Mod+Ctrl+Left  { focus-monitor-left; }
+    Mod+Ctrl+Right { focus-monitor-right; }
+
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
     // ...
@@ -630,4 +645,8 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+}
+
+debug {
+    disable-cursor-plane
 }

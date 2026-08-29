@@ -5,7 +5,8 @@
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-# font_family      LigaConsolas Nerd Font Regular
+
+font_family      LigaConsolas Nerd Font Regular
 # bold_font        auto
 # italic_font      auto
 # bold_italic_font auto
@@ -194,7 +195,6 @@ font_features MonacoNFM -liga -calt
 #: or remote control is undefined.
 
 # text_composition_strategy platform
-text_composition_strategy 1.7 35
 
 #: Control how kitty composites text glyphs onto the background color.
 #: The default value of platform tries for text rendering as close to
@@ -2180,7 +2180,6 @@ dynamic_background_opacity no
 #: windows.
 
 # linux_display_server auto
-linux_display_server wayland
 
 #: Choose between Wayland and X11 backends. By default, an appropriate
 #: backend based on the system state is chosen automatically. Set it
@@ -2954,11 +2953,3 @@ linux_display_server wayland
 #: }}}
 
 #: }}}
-
-
-# BEGIN_KITTY_FONTS
-font_family      family="Monaco Nerd Font Mono"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
