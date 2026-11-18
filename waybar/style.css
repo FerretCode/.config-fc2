@@ -102,6 +102,15 @@ window#waybar {
     color: @fg-dim;
 }
 
+/* ── pulseaudio ─────────────────────────────────────────────── */
+#pulseaudio {
+    color: @fg-dim;
+}
+
+#pulseaudio.muted {
+    color: @crit;
+}
+
 /* ── battery ────────────────────────────────────────────────── */
 #battery {
     color: @fg-dim;

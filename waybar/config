@@ -8,6 +8,7 @@
 "modules-right": [
     "cpu",
     "memory",
+    "pulseaudio",
     "battery",
     "network",
     "bluetooth",
@@ -82,6 +83,16 @@
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "blueman-manager"
+},
+
+"pulseaudio": {
+    "format": "VOL {volume}%",
+    "format-bluetooth": "BT VOL {volume}%",
+    "format-muted": "MUTED",
+    "scroll-step": 5,
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "tooltip-format": "{desc} — {volume}%"
 },
 
 "tray": {
